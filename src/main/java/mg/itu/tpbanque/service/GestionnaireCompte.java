@@ -34,7 +34,6 @@ import mg.itu.tpbanque.entity.CompteBancaire;
         }
 )
 @ApplicationScoped
-//@RequestScoped
 public class GestionnaireCompte {
 
     @PersistenceContext(unitName = "banquePU")
@@ -42,6 +41,7 @@ public class GestionnaireCompte {
 
     public List<CompteBancaire> getAllComptes() {
         TypedQuery<CompteBancaire> query = em.createNamedQuery("CompteBancaire.findAll", CompteBancaire.class);
+        System.out.println("test");
         return query.getResultList();
     }
 

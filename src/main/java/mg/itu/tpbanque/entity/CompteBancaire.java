@@ -28,6 +28,7 @@ public class CompteBancaire implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
+    private int solde;
 
     public CompteBancaire(){
         
@@ -65,7 +66,6 @@ public class CompteBancaire implements Serializable {
     public void setSolde(int solde) {
         this.solde = solde;
     }
-    private int solde;
 
     public Long getId() {
         return id;

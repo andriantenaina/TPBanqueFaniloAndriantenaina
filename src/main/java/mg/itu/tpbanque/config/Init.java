@@ -14,7 +14,7 @@ import mg.itu.tpbanque.entity.CompteBancaire;
 import mg.itu.tpbanque.service.GestionnaireCompte;
 
 /**
- *
+ * Bean lors du demarage de l'application
  * @author Fanilo
  */
 @ApplicationScoped
