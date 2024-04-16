@@ -36,7 +36,7 @@
                                 <h:outputText value="CompteId"/>
                             </f:facet>
                             <h:link outcome="mouvement?id=#{item.id}" 
-                                value="#{item.id}"/>
+                                    value="#{item.id}"/>
                         </p:column>
 
                         <p:column sortBy="#{item.nom}"
@@ -55,7 +55,16 @@
                             <h:outputText value="#{item.solde}"/>
                         </p:column>
 
-                        
+                        <p:column width="10">
+                            <f:facet name="header">
+                                <h:outputText value="Opérations"/>
+                            </f:facet>
+                            <h:commandLink action="#{listeComptes.supprimerCompte(item)}"
+                                           title="Supprimer le compte de #{item.nom}" >
+                                <h:graphicImage name="images/del.png"/>
+                            </h:commandLink>
+                        </p:column>
+
                     </p:dataTable>
                 </h:form>
                 <h:messages/>
