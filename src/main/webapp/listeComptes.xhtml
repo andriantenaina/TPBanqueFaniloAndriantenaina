@@ -65,6 +65,13 @@
                             </h:commandLink>
                         </p:column>
 
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Modifier"/>
+                            </f:facet>
+                            <h:link outcome="modifierCompte?id=#{item.id}" 
+                                    value="Modifier"/>
+                        </p:column>
                     </p:dataTable>
                 </h:form>
                 <h:messages/>
