@@ -18,7 +18,7 @@ import mg.itu.tpbanque.entity.CompteBancaire;
 import mg.itu.tpbanque.jsf.util.Util;
 
 /**
- * Backing bean de la page Transfert d'Argent
+ * Backing bean de la page Modification
  *
  * @author Fanilo
  */

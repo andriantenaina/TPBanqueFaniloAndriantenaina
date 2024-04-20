@@ -23,9 +23,27 @@ import mg.itu.tpbanque.service.GestionnaireCompte;
 public class AjoutCompte implements Serializable {
 
     private CompteBancaire compteBancaire;
+    private String nom;
+    private int solde;
 
     @Inject
     private GestionnaireCompte gestionnaireCompte;
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getSolde() {
+        return solde;
+    }
+
+    public void setSolde(int solde) {
+        this.solde = solde;
+    }
 
     public CompteBancaire getCompteBancaire() {
         return compteBancaire;
@@ -37,13 +55,14 @@ public class AjoutCompte implements Serializable {
 
     public String action() {
         boolean erreur = false;
-        if (compteBancaire.getSolde() < 0) {
+        if (this.solde < 0) {
             Util.messageErreur("Solde Doit etre positf !", "Solde Doit etre positf !", "form:");
             erreur = true;
         }
         if (erreur) { // en cas d'erreur, rester sur la même page
             return null;
         }
+        compteBancaire = new CompteBancaire(this.nom,this.solde);
         gestionnaireCompte.creerCompte(compteBancaire);
         Util.addFlashInfoMessage("Compte de "+ compteBancaire.getNom() +" cree avec succe");
         return "listeComptes?faces-redirect=true";
@@ -53,9 +72,9 @@ public class AjoutCompte implements Serializable {
      * Creates a new instance of ListeComptes
      */
     public AjoutCompte() {
-        if(compteBancaire == null){
-            compteBancaire = new CompteBancaire();
-        }
+        //if(compteBancaire == null){
+        //    compteBancaire = new CompteBancaire();
+        //}
     }
 
 }

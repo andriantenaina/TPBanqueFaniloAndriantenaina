@@ -19,12 +19,12 @@
                         <h:panelGrid columns="3">
 
                             <h:outputLabel value="ID Compte Destination :" for="nom" />
-                            <h:inputText id="nom" value="#{ajoutCompte.compteBancaire.nom}"
+                            <h:inputText id="nom" value="#{ajoutCompte.nom}"
                                          required="true"/>
                             <h:message for="nom"/>
 
                             <h:outputLabel value="Montant :" for="solde" />
-                            <h:inputText id="solde" value="#{ajoutCompte.compteBancaire.solde}"
+                            <h:inputText id="solde" value="#{ajoutCompte.solde}"
                                          required="true"
                                          converterMessage="le solde est un nombre entier"/>
                             <h:message for="solde"/>
