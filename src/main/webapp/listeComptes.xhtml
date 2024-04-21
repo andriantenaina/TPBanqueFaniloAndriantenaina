@@ -72,6 +72,14 @@
                             <h:link outcome="modifierCompte?id=#{item.id}" 
                                     value="Modifier"/>
                         </p:column>
+                        
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Historique&lt;br/>opérations"/>
+                            </f:facet>
+                            <h:link outcome="operation?id=#{item.id}" 
+                                    value="details"/>
+                        </p:column>
                     </p:dataTable>
                 </h:form>
                 <h:messages/>
